@@ -46,6 +46,7 @@ public class SimpleCalculator extends JFrame implements ActionListener
         textfield.setEditable(false);
         textfield.setHorizontalAlignment(SwingConstants.RIGHT);
         add(textfield);
+
         int x = 10;
         int y = 230;
         for(int i=1;i<10;i++)
@@ -297,8 +298,13 @@ public class SimpleCalculator extends JFrame implements ActionListener
         else
             for(int i=1;i<10;i++)
             {
-                if(source == btn[i])
-                    textfield.setText(textfield.getText() + i);
+                if(source == btn[i]){
+                    System.out.println(i);
+                    if(textfield.getText().equals("0"))
+                        textfield.setText(i+"");
+                    else
+                        textfield.setText(textfield.getText() + i);
+                }
             }
     }
     public boolean checkEntry()
